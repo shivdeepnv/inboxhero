@@ -1,0 +1,31 @@
+{
+  "preferences": [
+    {
+      "id": "pref-1",
+      "type": "no_meetings_before",
+      "params": {
+        "time": "11:00"
+      },
+      "source_message": "m041",
+      "stated_by": "sam@paperjet.io",
+      "recorded_at": "2026-09-20T23:52:48"
+    },
+    {
+      "id": "pref-2",
+      "type": "cc_rule",
+      "params": {
+        "sender_org": "Hartwell & Cho",
+        "cc": "priya@paperjet.io"
+      },
+      "source_message": "m015",
+      "stated_by": "priya@paperjet.io",
+      "recorded_at": "2026-09-20T23:52:50"
+    }
+  ],
+  "rejected": [
+    {
+      "message_id": "m039",
+      "reason": "flagged by the rule stage: contains an instruction addressed to the assistant (conceal-from-user, bypass-approval); not acted on"
+    }
+  ]
+}

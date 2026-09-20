@@ -3,19 +3,19 @@
     "message_id": "m040",
     "to": "priya@paperjet.io",
     "subject": "Re: board deck",
-    "body": "Hi Priya,\n\nGot it. I'll have the board deck finished and circulated two days before the board review on the 18th so the investors have time to read through it. I'll handle everything except the financials slide, which you'll cover.\n\nThanks,\nSam",
+    "body": "Hi Priya,\n\nGot it. I'll have the board deck finished and circulated two days before the board review on the 18th so the investors have time to read through it. I'll handle everything except the financials slide, which you mentioned you'll do.\n\nThanks,\nSam",
     "cited": [
-      "m040",
-      "m038"
+      "m038",
+      "m040"
     ],
     "facts": [
       {
-        "source": "m040",
-        "quote": "Can you have the board deck finished and circulated two days before the board review?"
-      },
-      {
         "source": "m038",
         "quote": "the quarterly board review is set for the 18th, 10:00am"
+      },
+      {
+        "source": "m040",
+        "quote": "Can you have the board deck finished and circulated two days before the board review?"
       },
       {
         "source": "m040",
@@ -29,5 +29,22 @@
       ]
     ],
     "status": "draft"
+  },
+  "m043": {
+    "message_id": "m043",
+    "to": "aria.f@northwind.vc",
+    "subject": "Re: one more slot",
+    "body": "Hi Aria,\n\nThanks for the proposal. Monday at 9:00am is earlier than I can do. I don't take meetings before 11:00am, so could we find a time at 11:00am or later?\n\nThanks,\nSam",
+    "cc": [],
+    "cited": [
+      "m043",
+      "m041"
+    ],
+    "facts": [],
+    "retrieved": [],
+    "status": "draft",
+    "applied_preferences": [
+      "pref-1"
+    ]
   }
 }
