@@ -11,8 +11,14 @@ def log(cap, event, **fields):
         f.write(json.dumps(record) + "\n")
 
 
-def clear_cap(cap):
+def clear_cap(cap, **match):
+    """Drop earlier events for a capability, optionally only those whose fields equal `match`."""
     if not TRACE_PATH.exists():
         return
-    kept = [line for line in TRACE_PATH.read_text().splitlines() if json.loads(line).get("cap") != cap]
+    kept = []
+    for line in TRACE_PATH.read_text().splitlines():
+        rec = json.loads(line)
+        if rec.get("cap") == cap and all(rec.get(k) == v for k, v in match.items()):
+            continue
+        kept.append(line)
     TRACE_PATH.write_text("".join(line + "\n" for line in kept))

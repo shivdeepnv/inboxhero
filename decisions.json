@@ -6,10 +6,10 @@
     "fallback": 0,
     "undecided": 0,
     "by_disposition": {
-      "archive": 71,
-      "reply": 13,
-      "escalate": 10,
-      "defer": 6
+      "archive": 72,
+      "reply": 12,
+      "escalate": 11,
+      "defer": 5
     }
   },
   "decisions": [
@@ -30,14 +30,14 @@
     {
       "message_id": "m001",
       "disposition": "reply",
-      "reason": "Raghav is requesting Sam to investigate and resolve a staging environment outage, which requires Sam's direct response to confirm action or provide technical guidance.",
+      "reason": "Raghav is requesting Sam to investigate and resolve a critical staging environment issue, which requires Sam's acknowledgment and commitment to take action.",
       "method": "llm",
       "rule": null
     },
     {
       "message_id": "m003",
       "disposition": "archive",
-      "reason": "This email was sent by Sam himself in response to a colleague's request, so no further action is needed from Sam.",
+      "reason": "This is an outbound message Sam already sent; no action or response is needed from Sam.",
       "method": "llm",
       "rule": null
     },
@@ -51,7 +51,7 @@
     {
       "message_id": "m005",
       "disposition": "archive",
-      "reason": "Raghav confirms the staging issue is resolved and thanks Sam; no action or response needed from Sam.",
+      "reason": "The issue has been resolved and Raghav is confirming success; no action or response is needed from Sam.",
       "method": "llm",
       "rule": null
     },
@@ -86,7 +86,7 @@
     {
       "message_id": "m044",
       "disposition": "archive",
-      "reason": "This is an outgoing email from Sam to Priya requesting action from Priya; Sam has already completed his part by sending the request, so no further action is needed from Sam.",
+      "reason": "This is an outbound email from Sam to Priya requesting action; Sam has already sent it and no response or further action from Sam is needed.",
       "method": "llm",
       "rule": null
     },
@@ -128,7 +128,7 @@
     {
       "message_id": "m008",
       "disposition": "escalate",
-      "reason": "Request involves sharing sensitive credentials (AMQP URL with embedded password) which requires human judgment on proper security practices for credential distribution.",
+      "reason": "Request involves sharing infrastructure credentials via email, which requires human judgment on proper security procedures for credential distribution.",
       "method": "llm",
       "rule": null
     },
@@ -149,7 +149,7 @@
     {
       "message_id": "m041",
       "disposition": "archive",
-      "reason": "This is a standing instruction from Sam documenting a personal scheduling preference; no action or response is needed.",
+      "reason": "This is a standing instruction from Sam about scheduling preferences that should be recorded as a preference and requires no action or response.",
       "method": "llm",
       "rule": null
     },
@@ -170,7 +170,7 @@
     {
       "message_id": "m015",
       "disposition": "archive",
-      "reason": "This is a standing instruction from a colleague about future email handling preferences that should be recorded and requires no action on a specific matter.",
+      "reason": "This is a standing instruction from a colleague about future email handling preferences, which should be recorded but requires no action on the current email.",
       "method": "llm",
       "rule": null
     },
@@ -198,7 +198,7 @@
     {
       "message_id": "m106",
       "disposition": "archive",
-      "reason": "Routine informational summary from email service provider with no action, response, or decision required from Sam.",
+      "reason": "Routine informational summary from email service provider with no action or response required from Sam.",
       "method": "llm",
       "rule": null
     },
@@ -212,21 +212,21 @@
     {
       "message_id": "m026",
       "disposition": "defer",
-      "reason": "Informational kickoff message with a future launch target date (September 20th) that Sam should track, but no immediate response or action is required now.",
+      "reason": "Launch deadline of September 20th requires tracking, but no immediate response is needed; this is a coordination announcement for a future event.",
       "method": "llm",
       "rule": null
     },
     {
       "message_id": "m027",
       "disposition": "archive",
-      "reason": "This is an informational status update from a colleague about launch progress; no response or action is required from Sam at this time.",
+      "reason": "Status update on Dan's design work requires no response or action from Sam; informational only.",
       "method": "llm",
       "rule": null
     },
     {
       "message_id": "m028",
-      "disposition": "defer",
-      "reason": "Maya is committing to deliverables with a Wednesday deadline as part of the launch week; Sam should track this milestone but no response or action is required now.",
+      "disposition": "archive",
+      "reason": "Maya is committing to own specific deliverables (Product Hunt copy and email blast) with a Wednesday deadline, which is informational for Sam's awareness but requires no response or action from Sam himself.",
       "method": "llm",
       "rule": null
     },
@@ -247,21 +247,21 @@
     {
       "message_id": "m029",
       "disposition": "defer",
-      "reason": "Raghav reports a scheduled load test on the 14th as part of the tracked launch week; Sam should monitor this milestone but needs no action now.",
+      "reason": "Raghav is reporting a scheduled load test on the 14th as part of the launch timeline; Sam should track this date but no response or action is needed now.",
       "method": "llm",
       "rule": null
     },
     {
       "message_id": "m030",
       "disposition": "reply",
-      "reason": "Priya is requesting Sam's explicit approval of pricing copy by the 12th with a hard dependency blocking the page launch, requiring Sam to confirm he can meet this deadline.",
+      "reason": "Priya requests Sam's specific approval of pricing copy by the 12th with a shipping dependency, requiring Sam to confirm he can meet this deadline.",
       "method": "llm",
       "rule": null
     },
     {
       "message_id": "m033",
       "disposition": "archive",
-      "reason": "Maya is sharing a draft for optional feedback in a shared document; no response or commitment from Sam is required, and this is informational within the launch coordination thread.",
+      "reason": "Maya is sharing a completed draft for optional review; no response or action is required from Sam at this time.",
       "method": "llm",
       "rule": null
     },
@@ -317,7 +317,7 @@
     {
       "message_id": "m034",
       "disposition": "archive",
-      "reason": "Informational status update on Dan's owned task (asset upload); no action or response required from Sam.",
+      "reason": "Informational status update on Dan's completed work; no action or response required from Sam.",
       "method": "llm",
       "rule": null
     },
@@ -338,7 +338,7 @@
     {
       "message_id": "m038",
       "disposition": "defer",
-      "reason": "Scheduled board review meeting on September 18th at 10:00am that Sam must track; confirmation requires no immediate response.",
+      "reason": "Scheduled board meeting on a future date (September 18th) that Sam must track; no response required at this time as the event is already confirmed.",
       "method": "llm",
       "rule": null
     },
@@ -366,7 +366,7 @@
     {
       "message_id": "m051",
       "disposition": "reply",
-      "reason": "Sam needs to respond to confirm or decline the coffee meeting request, as it commits Sam's time and only Sam can make that decision.",
+      "reason": "Sam needs to respond to a personal meeting request that requires his confirmation of availability and interest in meeting next week.",
       "method": "llm",
       "rule": null
     },
@@ -387,7 +387,7 @@
     {
       "message_id": "m010",
       "disposition": "reply",
-      "reason": "Sam must confirm or decline the meeting request for Tuesday the 15th at 3:00pm before the sender can send a calendar hold.",
+      "reason": "Aria requests Sam confirm availability for a 30-minute meeting on Tuesday the 15th at 3:00pm and needs Sam's response before sending a calendar hold.",
       "method": "llm",
       "rule": null
     },
@@ -408,7 +408,7 @@
     {
       "message_id": "m040",
       "disposition": "reply",
-      "reason": "Priya is requesting Sam to commit to completing and circulating the board deck by a specific deadline, which requires Sam's confirmation and response.",
+      "reason": "Priya is requesting Sam commit to completing and circulating the board deck by a specific deadline, which requires Sam's confirmation and response.",
       "method": "llm",
       "rule": null
     },
@@ -422,7 +422,7 @@
     {
       "message_id": "m117",
       "disposition": "defer",
-      "reason": "Timesheet submission has a specific deadline (Friday 5pm) that Sam must track and complete, requiring no reply now but action by the stated date.",
+      "reason": "Timesheet submission has an explicit Friday 5pm deadline that Sam must track and complete, but no response is needed now since the request is clear and actionable.",
       "method": "llm",
       "rule": null
     },
@@ -443,7 +443,7 @@
     {
       "message_id": "m035",
       "disposition": "archive",
-      "reason": "Informational status update requiring no action or response from Sam; staging deploy is complete and successful.",
+      "reason": "This is a status update on Raghav's completed work (staging deploy green) with no request for Sam's action or decision.",
       "method": "llm",
       "rule": null
     },
@@ -471,7 +471,7 @@
     {
       "message_id": "m061",
       "disposition": "reply",
-      "reason": "Sam must respond to confirm or reschedule his dental appointment scheduled for September 15 at 3:00 PM.",
+      "reason": "Sam must respond to confirm or reschedule the dental appointment by the deadline to keep the September 15 slot.",
       "method": "llm",
       "rule": null
     },
@@ -499,14 +499,14 @@
     {
       "message_id": "m036",
       "disposition": "archive",
-      "reason": "Informational team reminder with no action or response required from Sam; the specific task for Sam (pricing approval by the 12th) was assigned in an earlier message.",
+      "reason": "This is a status update and deadline reminder to the team with no new action or response required from Sam; the specific action item for Sam (pricing copy approval by the 12th) was already communicated in an earlier message.",
       "method": "llm",
       "rule": null
     },
     {
       "message_id": "m042",
       "disposition": "reply",
-      "reason": "Jordan is a job candidate requesting a status update on the backend role with a hard deadline of September 19th, requiring Sam to provide hiring timeline information or a decision.",
+      "reason": "Jordan is a job candidate requesting a status update on the backend role with a hard deadline of September 19th, requiring Sam to provide next steps or a hiring decision.",
       "method": "llm",
       "rule": null
     },
@@ -575,8 +575,8 @@
     },
     {
       "message_id": "m012",
-      "disposition": "reply",
-      "reason": "Priya is asking Sam to confirm completion of a task with an implied deadline, but the request is vague and requires Sam to either clarify what 'the thing' is or confirm he understands the prior conversation.",
+      "disposition": "escalate",
+      "reason": "The request is ambiguous\u2014'that thing' is undefined with no prior context in the thread, making it impossible to verify what action is needed or when the deadline is.",
       "method": "llm",
       "rule": null
     },
@@ -625,35 +625,35 @@
     {
       "message_id": "m018",
       "disposition": "escalate",
-      "reason": "Email requests review and signature of a legal SAFE document with financial terms, requiring Sam's direct human decision and verification rather than automated handling.",
+      "reason": "Email requests signature on a legal document (SAFE amendment) with specific review requirements and a deadline, requiring Sam's direct human decision and verification before any action.",
       "method": "llm",
       "rule": null
     },
     {
       "message_id": "m016",
       "disposition": "reply",
-      "reason": "Sam must confirm or decline the proposed Wednesday 2:00pm demo meeting time, as the partner is awaiting his availability confirmation.",
+      "reason": "Sam must confirm or decline the Wednesday 2:00pm demo meeting slot, as the partner is awaiting his availability to proceed with the evaluation.",
       "method": "llm",
       "rule": null
     },
     {
       "message_id": "m046",
       "disposition": "reply",
-      "reason": "Sam must provide the journalist with a product differentiator statement and confirm the launch date before Thursday's deadline.",
+      "reason": "A journalist is requesting Sam to provide a product statement and confirm launch date information by Thursday deadline, which requires Sam's direct response and approval before sending.",
       "method": "llm",
       "rule": null
     },
     {
       "message_id": "m019",
       "disposition": "reply",
-      "reason": "Sam must confirm the event booking within 48 hours; the venue explicitly requests a reply to proceed with the contract.",
+      "reason": "Sam must confirm or decline the event booking before the 48-hour hold expires, and the venue expects a direct response from Sam to proceed with the contract.",
       "method": "llm",
       "rule": null
     },
     {
       "message_id": "m043",
       "disposition": "reply",
-      "reason": "Sam must confirm or decline the proposed Monday 9:00am meeting time with Aria and her partner before Aria can send a calendar hold.",
+      "reason": "Aria is requesting Sam's confirmation for an alternative meeting time (Monday 9:00am) with an additional participant, which requires Sam's explicit approval before proceeding.",
       "method": "llm",
       "rule": null
     },
@@ -674,7 +674,7 @@
     {
       "message_id": "m048",
       "disposition": "defer",
-      "reason": "Sam must review board minutes and flag corrections by Monday before the September 18th meeting, requiring tracked follow-up on a future deadline.",
+      "reason": "Sam must review board minutes and flag corrections by Monday before the September 18th meeting, which is a future deadline requiring tracking but no immediate reply.",
       "method": "llm",
       "rule": null
     },
@@ -688,14 +688,14 @@
     {
       "message_id": "m055",
       "disposition": "escalate",
-      "reason": "Request requires Sam's signature on a legal document (IP assignment), which involves legal commitments and cannot be verified from the inbox alone.",
+      "reason": "Request involves a legal document signature (IP assignment) which requires human decision-making and cannot be verified from the inbox alone.",
       "method": "llm",
       "rule": null
     },
     {
       "message_id": "m119",
       "disposition": "archive",
-      "reason": "Informational notification about available meeting notes; no action, response, or tracking required from Sam.",
+      "reason": "This is an informational notification about auto-saved meeting notes that requires no action, response, or follow-up from Sam.",
       "method": "llm",
       "rule": null
     },

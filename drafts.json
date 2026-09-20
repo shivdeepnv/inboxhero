@@ -1,0 +1,33 @@
+{
+  "m040": {
+    "message_id": "m040",
+    "to": "priya@paperjet.io",
+    "subject": "Re: board deck",
+    "body": "Hi Priya,\n\nGot it. I'll have the board deck finished and circulated two days before the board review on the 18th so the investors have time to read through it. I'll handle everything except the financials slide, which you'll cover.\n\nThanks,\nSam",
+    "cited": [
+      "m040",
+      "m038"
+    ],
+    "facts": [
+      {
+        "source": "m040",
+        "quote": "Can you have the board deck finished and circulated two days before the board review?"
+      },
+      {
+        "source": "m038",
+        "quote": "the quarterly board review is set for the 18th, 10:00am"
+      },
+      {
+        "source": "m040",
+        "quote": "I'll do the financials slide, you do everything else"
+      }
+    ],
+    "retrieved": [
+      [
+        "m038",
+        "keyword"
+      ]
+    ],
+    "status": "draft"
+  }
+}
