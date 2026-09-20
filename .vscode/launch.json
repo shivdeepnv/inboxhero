@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "R1 rules only",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/demo.py",
+      "args": ["--cap", "R1", "--rules-only"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "R1 full",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/demo.py",
+      "args": ["--cap", "R1"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}
