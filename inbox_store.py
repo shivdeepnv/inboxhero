@@ -5,10 +5,16 @@ from pathlib import Path
 INBOX_PATH = Path(__file__).parent / "inbox.json"
 
 
+DELETED_PATH = Path(__file__).parent / "deleted.jsonl"
+
+
 def load_inbox(path=INBOX_PATH):
     with open(path) as f:
         messages = json.load(f)
-    return sorted(messages, key=lambda m: m["timestamp"])
+    deleted = set()
+    if DELETED_PATH.exists():
+        deleted = {json.loads(line)["message_id"] for line in DELETED_PATH.read_text().splitlines() if line}
+    return sorted((m for m in messages if m["id"] not in deleted), key=lambda m: m["timestamp"])
 
 
 def split_address(address):
