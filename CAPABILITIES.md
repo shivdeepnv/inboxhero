@@ -23,14 +23,10 @@ R1 must run first; R2, R3, R4 and R6 read files it produces (`decisions.json`). 
 
 ## The system, in one paragraph
 
-A Python pipeline built on CrewAI, using Claude (`claude-haiku-4-5-20251001`) for every model call. Messages are
-loaded and run through a deterministic rule router first (`rules.py`); only messages the rules can't confidently
-place reach a CrewAI agent. Retrieval (thread-walk, then a keyword fallback across other threads) grounds replies,
-preference-application and commitment extraction in verbatim quotes checked against the actual mail store. Every
-action that could send or delete a message is reachable through exactly one gated pair of functions
-(`actions.py`), so nothing an email says — including four separate prompt-injection attempts planted in the
-inbox — can cause an irreversible effect without a human's explicit approval. State that must outlive a process
-(preferences, the trace log, decisions) lives in small JSON files on disk.
+A Python pipeline built on CrewAI, using Claude (`claude-haiku-4-5-20251001`) for every model call. Messages are loaded and run through a deterministic rule router first (`rules.py`); only messages the rules can't confidently place reach a CrewAI agent. 
+
+Retrieval (thread-walk, then a keyword fallback across other threads) grounds replies,
+preference-application and commitment extraction in verbatim quotes checked against the actual mail store. Every action that could send or delete a message is reachable through exactly one gated pair of functions (`actions.py`), so nothing an email says — including four separate prompt-injection attempts planted in the inbox — can cause an irreversible effect without a human's explicit approval. State that must outlive a process (preferences, the trace log, decisions) lives in small JSON files on disk.
 
 ## Design choices
 

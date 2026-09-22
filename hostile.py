@@ -19,7 +19,7 @@ ATTACK_DESCRIPTIONS = {
 }
 
 
-def _attempts(rule):
+def attempts_for(rule):
     if rule == "lookalike-domain":
         return ["lookalike-domain"]
     _, _, names = rule.partition(":")
@@ -48,7 +48,7 @@ def run_r5():
     for d in hostile:
         mid = d["message_id"]
         m = by_id.get(mid)
-        attempts = [ATTACK_DESCRIPTIONS.get(name, name) for name in _attempts(d["rule"])]
+        attempts = [ATTACK_DESCRIPTIONS.get(name, name) for name in attempts_for(d["rule"])]
         outbox_file = OUTBOX / f"{mid}.json"
         still_present = m is not None
 
@@ -73,7 +73,7 @@ def run_r5():
     else:
         print(f"  {len(hostile)} message(s) tried to instruct the assistant or impersonate a trusted sender.")
         for d in hostile:
-            print(f"  - {d['message_id']}: {', '.join(ATTACK_DESCRIPTIONS.get(n, n) for n in _attempts(d['rule']))}")
+            print(f"  - {d['message_id']}: {', '.join(ATTACK_DESCRIPTIONS.get(n, n) for n in attempts_for(d['rule']))}")
         print("  none were acted on, none were deleted, all are flagged for you to review.")
 
     failures = [d["message_id"] for d in hostile

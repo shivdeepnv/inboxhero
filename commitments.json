@@ -1,0 +1,313 @@
+[
+  {
+    "message_id": "m026",
+    "what": "Launch kickoff - target date",
+    "date": "2026-09-20",
+    "time": "",
+    "cited": [
+      "m026",
+      "m036"
+    ],
+    "facts": [
+      {
+        "source": "m026",
+        "quote": "Target is the 20th"
+      },
+      {
+        "source": "m036",
+        "quote": "Reminder the 20th is a hard date, press is briefed."
+      },
+      {
+        "source": "m026",
+        "quote": "Target is the 20th."
+      }
+    ],
+    "id": "c1",
+    "conflict_with": []
+  },
+  {
+    "message_id": "m028",
+    "what": "Draft Product Hunt copy and email blast",
+    "date": "2026-09-09",
+    "time": "",
+    "cited": [
+      "m028"
+    ],
+    "facts": [
+      {
+        "source": "m028",
+        "quote": "I'll own the Product Hunt copy and the email blast. Draft by Wednesday."
+      }
+    ],
+    "id": "c2",
+    "conflict_with": []
+  },
+  {
+    "message_id": "m029",
+    "what": "Load test on the signup flow",
+    "date": "2026-09-14",
+    "time": "",
+    "cited": [
+      "m029"
+    ],
+    "facts": [
+      {
+        "source": "m029",
+        "quote": "Load test on the signup flow is scheduled for the 14th."
+      }
+    ],
+    "id": "c3",
+    "conflict_with": []
+  },
+  {
+    "message_id": "m030",
+    "what": "Approve final pricing page copy (annual discount wording)",
+    "date": "2026-09-12",
+    "time": "",
+    "cited": [
+      "m030"
+    ],
+    "facts": [
+      {
+        "source": "m030",
+        "quote": "Sam, can you approve the final pricing copy by the 12th?"
+      }
+    ],
+    "id": "c4",
+    "conflict_with": []
+  },
+  {
+    "message_id": "m038",
+    "what": "Quarterly board review",
+    "date": "2026-09-18",
+    "time": "10:00",
+    "cited": [
+      "m038"
+    ],
+    "facts": [
+      {
+        "source": "m038",
+        "quote": "the quarterly board review is set for the 18th, 10:00am, in-person at the office"
+      }
+    ],
+    "id": "c5",
+    "conflict_with": []
+  },
+  {
+    "message_id": "m010",
+    "what": "Intro call with Aria to discuss PaperJet vision",
+    "date": "2026-09-15",
+    "time": "15:00",
+    "cited": [
+      "m010"
+    ],
+    "facts": [
+      {
+        "source": "m010",
+        "quote": "Does Tuesday the 15th at 3:00pm work on your side?"
+      }
+    ],
+    "id": "c6",
+    "conflict_with": [
+      "c9"
+    ]
+  },
+  {
+    "message_id": "m040",
+    "what": "Board deck finished and circulated",
+    "date": "2026-09-16",
+    "time": "",
+    "cited": [
+      "m038",
+      "m040"
+    ],
+    "facts": [
+      {
+        "source": "m040",
+        "quote": "Can you have the board deck finished and circulated two days before the board review?"
+      },
+      {
+        "source": "m038",
+        "quote": "Confirming the quarterly board review is set for the 18th, 10:00am, in-person at the office."
+      }
+    ],
+    "id": "c7",
+    "conflict_with": []
+  },
+  {
+    "message_id": "m117",
+    "what": "Submit timesheet",
+    "date": "2026-09-11",
+    "time": "17:00",
+    "cited": [
+      "m117"
+    ],
+    "facts": [
+      {
+        "source": "m117",
+        "quote": "submit your timesheet by Friday 5pm"
+      }
+    ],
+    "id": "c8",
+    "conflict_with": []
+  },
+  {
+    "message_id": "m061",
+    "what": "Dental cleaning appointment with Dr. Osei",
+    "date": "2026-09-15",
+    "time": "15:00",
+    "cited": [
+      "m061"
+    ],
+    "facts": [
+      {
+        "source": "m061",
+        "quote": "This is a reminder of your dental cleaning with Dr. Osei on Tuesday, September 15 at 3:00 PM."
+      }
+    ],
+    "id": "c9",
+    "conflict_with": [
+      "c6"
+    ]
+  },
+  {
+    "message_id": "m042",
+    "what": "Respond to competing job offer",
+    "date": "2026-09-19",
+    "time": "",
+    "cited": [
+      "m042"
+    ],
+    "facts": [
+      {
+        "source": "m042",
+        "quote": "I have another offer I need to respond to by the 19th"
+      }
+    ],
+    "id": "c10",
+    "conflict_with": []
+  },
+  {
+    "message_id": "m013",
+    "what": "Weekly 1:1 meeting rescheduled to Wednesday",
+    "date": "2026-09-09",
+    "time": "14:00",
+    "cited": [
+      "m013"
+    ],
+    "facts": [
+      {
+        "source": "m013",
+        "quote": "Can we move our weekly 1:1 from Thursday to Wednesday at 2:00pm this week?"
+      }
+    ],
+    "id": "c11",
+    "conflict_with": [
+      "c14"
+    ]
+  },
+  {
+    "message_id": "m012",
+    "what": "Sort out that thing discussed after the standup",
+    "date": "",
+    "time": "",
+    "cited": [
+      "m012"
+    ],
+    "facts": [
+      {
+        "source": "m012",
+        "quote": "kind of need it done before the call"
+      }
+    ],
+    "id": "c12",
+    "conflict_with": []
+  },
+  {
+    "message_id": "m018",
+    "what": "Sign revised SAFE agreement via portal",
+    "date": "2026-09-11",
+    "time": "",
+    "cited": [
+      "m018"
+    ],
+    "facts": [
+      {
+        "source": "m018",
+        "quote": "Please review clause 4 in particular and sign via the portal by Friday."
+      }
+    ],
+    "id": "c13",
+    "conflict_with": []
+  },
+  {
+    "message_id": "m016",
+    "what": "PaperJet product demo with ACME Corp evaluation team",
+    "date": "2026-09-09",
+    "time": "14:00",
+    "cited": [
+      "m016"
+    ],
+    "facts": [
+      {
+        "source": "m016",
+        "quote": "Our evaluation team can do the product demo on Wednesday at 2:00pm."
+      }
+    ],
+    "id": "c14",
+    "conflict_with": [
+      "c11"
+    ]
+  },
+  {
+    "message_id": "m043",
+    "what": "Partner call - 20 minutes before markets open",
+    "date": "2026-09-14",
+    "time": "09:00",
+    "cited": [
+      "m043"
+    ],
+    "facts": [
+      {
+        "source": "m043",
+        "quote": "Could you do Monday at 9:00am, before markets open? It would only be 20 minutes."
+      }
+    ],
+    "id": "c15",
+    "conflict_with": []
+  },
+  {
+    "message_id": "m048",
+    "what": "Flag corrections to draft board minutes",
+    "date": "2026-09-14",
+    "time": "",
+    "cited": [
+      "m048"
+    ],
+    "facts": [
+      {
+        "source": "m048",
+        "quote": "please review the draft board minutes ahead of the meeting on the 18th and flag any corrections by Monday"
+      }
+    ],
+    "id": "c16",
+    "conflict_with": []
+  },
+  {
+    "message_id": "m055",
+    "what": "Sign updated IP assignment for new contractor",
+    "date": "2026-09-30",
+    "time": "",
+    "cited": [
+      "m055"
+    ],
+    "facts": [
+      {
+        "source": "m055",
+        "quote": "we also need your signature on the updated IP assignment for the new contractor. Portal link in the previous email. Not urgent but before month-end."
+      }
+    ],
+    "id": "c17",
+    "conflict_with": []
+  }
+]
