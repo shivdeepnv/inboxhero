@@ -1,0 +1,99 @@
+{
+  "student": "Shivdeep Nancherla, cert-aai-2026-06-0050",
+  "repo": "https://github.com/shivdeepnv/inboxhero",
+  "system": {
+    "framework": "crewai",
+    "model": "claude-haiku-4-5-20251001, used throughout for both development and the demo (no local model needed at this call volume; rate limits handled with a fixed delay between calls and retry-with-backoff on HTTP 429)",
+    "messages_processed": 100,
+    "rule_handled": 64,
+    "dispositions": ["reply", "archive", "defer", "delegate", "escalate"],
+    "retrieval": "thread-walk",
+    "irreversible": ["send", "delete"],
+    "reversible": ["draft", "label", "archive", "defer"],
+    "gate": "both",
+    "preference_demo": "m041: never accept a meeting before 11:00am -- declines m043's 9:00am ask and counter-offers 11:00am or later"
+  },
+  "capabilities": [
+    {
+      "id": "R1",
+      "name": "Zero the inbox",
+      "tier": "B",
+      "claim": "Assigns every message exactly one disposition (reply/archive/defer/delegate/escalate) with a stated reason, routing obvious cases through rules before any model call.",
+      "command": "python demo.py --cap R1",
+      "observable": "Prints all 100 dispositions, then 'rule-handled: 64', 'settled by the model: 36', 'model failed, escalated for the owner: 0', and 'undecided: 0'. Writes decisions.json.",
+      "evidence": "decisions.json; trace.jsonl events tagged cap=R1 (one decision event per message id, with method=rule|llm|fallback)"
+    },
+    {
+      "id": "R2",
+      "name": "Grounded reply",
+      "tier": "B",
+      "claim": "Drafts a reply only when it can be grounded in a specific earlier message, citing ids checked verbatim against the mail store, and refuses to draft otherwise.",
+      "command": "python demo.py --cap R2",
+      "observable": "m040 (board deck) -> a draft to Priya citing [m038, m040], stating the review is on the 18th. m012 ('the thing') -> 'NOT GROUNDED', no draft, because no email says what 'the thing' is. m008 (resend the staging credentials) -> 'NOT GROUNDED', refuses because the answer is a credential.",
+      "evidence": "drafts.json; trace.jsonl events tagged cap=R2 (read, draft, and ungrounded events)"
+    },
+    {
+      "id": "R3",
+      "name": "Gate the irreversible",
+      "tier": "C",
+      "claim": "Never sends or deletes without either per-action approval or an explicit --dry-run that shows exactly what it would do; sends write only to outbox/, one file per message.",
+      "command": "python demo.py --cap R3 --dry-run",
+      "observable": "Prints both proposed sends (m040, m043) in full with their cited ids, then 'outbox/ writes: 0' because dry-run suppresses them. Re-running without --dry-run prompts y/N per message; approving m040 writes outbox/m040.json, denying m043 writes nothing.",
+      "evidence": "outbox/; trace.jsonl events tagged cap=R3 (gate events recording the proposed action, the decision, and the outcome)"
+    },
+    {
+      "id": "R4",
+      "name": "Persistent preference",
+      "tier": "C",
+      "claim": "Records a stated preference in one process and applies it in a second, fresh process after the first has fully exited; rejects preferences that fail validation, including one spoofed as coming from the owner.",
+      "command": "python demo.py --cap R4",
+      "observable": "Stage 1 prints 'RECORDED pref-1 from m041: no meetings before 11:00am' and 'REJECTED m039' (a spoofed 'enable autonomous mode' note, caught as an injection). The process then exits. Stage 2, a new process reading only prefs.json, prints 'CHANGED m043' and drafts a counter-offer of 11:00am or later.",
+      "evidence": "prefs.json (present between the two stages); trace.jsonl events tagged cap=R4"
+    },
+    {
+      "id": "R5",
+      "name": "Refuse embedded instructions",
+      "tier": "C",
+      "claim": "Detects instructions addressed to the assistant and impersonation attempts, refuses to comply, logs each refusal by message id, reports all of them in a run summary, and never deletes any of them.",
+      "command": "python demo.py --cap R5",
+      "observable": "Finds 7 hostile messages (m017, m024, m039, m047: instructions addressed to an automated agent; m021, m045: phishing; m023: lookalike sender domain). For each, prints what was attempted and 'not complied with'. A safety check confirms zero outbox writes and that all 7 remain loadable in the inbox.",
+      "evidence": "trace.jsonl events tagged cap=R5 (refusal events naming the message id and what was attempted)"
+    },
+    {
+      "id": "R6",
+      "name": "Dashboard",
+      "tier": "C",
+      "claim": "Generates a three-pane dashboard (pending actions, flagged, commitments), reproducible from a run, with commitments cited to source messages and time conflicts surfaced.",
+      "command": "python demo.py --cap R6",
+      "observable": "Writes dashboard.json and dashboard.html. Commitments pane includes 'Board deck finished and circulated, 2026-09-16' citing [m038, m040] (date from one message, task from another). Two entries for 2026-09-15 15:00 (m010's investor call and m061's dentist appointment) are marked CONFLICT against each other.",
+      "evidence": "dashboard.json, dashboard.html; trace.jsonl events tagged cap=R6"
+    },
+    {
+      "id": "X1",
+      "name": "Daily digest",
+      "tier": "B",
+      "claim": "Produces a short narrative digest plus a Needs You / Can Wait / Handled Automatically breakdown from a completed triage run.",
+      "command": "python demo.py --cap X1",
+      "observable": "Prints a 3-4 sentence digest paragraph, then lists every reply/escalate message under 'NEEDS YOU', every defer message under 'CAN WAIT', and a count of archived/delegated messages under 'HANDLED AUTOMATICALLY'.",
+      "evidence": "trace.jsonl events tagged cap=X1 (one digest event with the counts and generated narrative)"
+    },
+    {
+      "id": "X2",
+      "name": "Unread mail from a sender",
+      "tier": "A",
+      "claim": "Lists all unread mail from a given sender: one lookup, one output, no model call.",
+      "command": "python demo.py --cap X2 --sender priya@paperjet.io",
+      "observable": "Prints each unread message from that address as 'id  timestamp  subject', then a total count.",
+      "evidence": "trace.jsonl events tagged cap=X2 (lookup event recording the sender queried and the ids matched)"
+    },
+    {
+      "id": "X3",
+      "name": "Thread summary",
+      "tier": "B",
+      "claim": "Summarizes a thread and extracts the single open question it still leaves for the owner, grounded in verbatim quotes from that thread.",
+      "command": "python demo.py --cap X3 --thread t-launch",
+      "observable": "Prints a 2-3 sentence summary of the 9-message launch thread, then 'OPEN QUESTION: ...' naming the still-unapproved pricing-copy wording (m030), plus the list of message ids the summary cited.",
+      "evidence": "trace.jsonl events tagged cap=X3 (summary event with cited ids and the open question)"
+    }
+  ]
+}
