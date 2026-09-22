@@ -1,11 +1,12 @@
 import argparse
 
 from grounded import run_r2
+from hostile import run_r5
 from outbound import run_r3
 from standing import run_r4
 from triage import run_r1
 
-CAPABILITIES = {"R1": run_r1, "R2": run_r2, "R3": run_r3, "R4": run_r4}
+CAPABILITIES = {"R1": run_r1, "R2": run_r2, "R3": run_r3, "R4": run_r4, "R5": run_r5}
 
 
 def main():
